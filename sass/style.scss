@@ -1,0 +1,86 @@
+$section-title-mobile: 1.5rem;
+$section-title-pc: 2rem;
+$course-color: #d3fcf4;
+$footer-bgc: #082b48;
+
+$breakpoints: (
+ 'sm': 'screen and (min-width: 576px)',
+ 'md': 'screen and (min-width: 768px)',
+ 'lg': 'screen and (min-width: 992px)',
+ 'xl': 'screen and (min-width: 1200px)'
+) !default;
+
+//メディアクエリ用のmixinを定義。デフォ値はmd
+@mixin mq($breakpoint: md) {
+//map-get(マップ型変数, キー)で値を取得
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// common
+section{
+  h1{
+    font-size: $section-title-mobile;
+    @include mq{
+      font-size: $section-title-pc;
+    }
+  }
+}
+
+// header
+nav{
+  .navbar-brand{
+    font-size: 1.3rem;
+    @include mq(sm){
+      font-size: 1.7rem;
+  }
+  }
+}
+
+// top
+.top{
+  background-image: url(../img/main-vsual-nontitle.png);
+  background-size: cover;
+  @include mq{
+      padding: 3.5rem 0;
+    }
+  h1{
+    font-size: 1.3rem;
+    @include mq{
+      font-size: 3rem;
+    }
+  }
+  p{
+    font-size: 0.8rem;
+    @include mq{
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// about
+
+// course
+.course{
+  background-color: $course-color;
+}
+
+// contact
+.contact{
+  form{
+    margin: 0 auto;
+  }
+}
+
+// footer
+footer{
+  background-color: $footer-bgc;
+  p{
+    font-size: 0.5rem;
+    margin-bottom: 0rem;
+    @include mq{
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- RESET SASS -->
+  <link rel="stylesheet" href="./sass/reset.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- SASS -->
+  <link rel="stylesheet" href="./sass/style.css">
+
+  <!-- Fabicon -->
+  <link rel="icon" href="./favicon.ico">
+
+  <title>30DAYSトライアル</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand font-weight-bold pl-5" href="#">30DAYSトライアル</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active pr-4">
+              <a class="nav-link" href="#">デイトラとは <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown pr-4">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                コース一覧
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">HTML / CSS / Bootstrap</a>
+                <a class="dropdown-item" href="#">HTML / CSS / JavaScript / jQuery</a>
+                <a class="dropdown-item" href="#">PHP / WordPress</a>
+              </div>
+            </li>
+            <li class="nav-item pr-5">
+              <a class="nav-link" href="#">お問い合わせ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="top text-center">
+    <h1 class="top-title font-weight-bold py-4 pt-5">
+      1日1題30日で<br>
+      プロのwebエンジニアになろう！
+    </h1>
+    <p class="top-subtitle lead pb-5">
+      毎日設定された課題をこなすだけ！<br>
+      未経験から30日でプログラミングスキルをつけよう
+    </p>
+  </section>
+
+  <section class="about">
+    <h1 class="text-center font-weight-bold pt-5 pb-3">デイトラとは</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 p-3 mb-4">
+          <img src="./img/about.png" alt="image" class="w-100">
+        </div>
+        <div class="col-sm-6 p-3">
+          <p>デイトラとは、無料で・迷わず・楽しく学べるプログラミング学習アプリです。 毎日設定された課題をこなしていくだけで、未経験から30日でプログラミングスキルが身につきます。
+            1日1題30日でプロのWebエンジニアを目指しましょう！
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="course py-4">
+    <h1 class="text-center font-weight-bold pt-5 pb-3">コース一覧</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 px-3 py-1">
+          <img src="./img/web_first.png" alt="image" class="w-100">
+          <p>HTML / CSS / Bootstrap</p>
+        </div>
+        <div class="col-sm-4 px-3 py-1">
+          <img src="./img/web_second.png" alt="image" class="w-100">
+          <p>HTML / CSS / JavaScript / jQuery</p>
+        </div>
+        <div class="col-sm-4 px-3 py-1 mb-4">
+          <img src="./img/web_third.png" alt="image" class="w-100">
+          <p>PHP / WordPress</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h1 class="text-center font-weight-bold pt-5 pb-3">お問い合わせ</h1>
+    <div class="container">
+      <p class="text-center">さあ今日から30日間を始めよう！</p>
+      <form class="w-75">
+        <div class="form-group mb-2">
+          <label for="exampleInputEmail1">メールアドレス</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="メールアドレス">
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-6 mb-1">
+            <label for="firstName">名字</label>
+            <input type="text" class="form-control" placeholder="名字" id="firstName">
+          </div>
+          <div class="col-sm-6">
+            <label for="lastName">名前</label>
+            <input type="text" class="form-control" placeholder="名前" id="lastName">
+          </div>
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">確認しました</label>
+        </div>
+        <div class="text-center mb-5">
+          <button type="submit" class="btn btn-outline-danger btn-lg text-center">無料で始める</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p class="text-right text-white py-3">Copyright(C) 2020 東京フリーランス Cording Check!</p>
+    </div>
+  </footer>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
