@@ -6,16 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- RESET SASS -->
-  <link rel="stylesheet" href="./sass/reset.css">
-
+  <link rel="stylesheet" href="./sass/_reset.css">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
   <!-- SASS -->
-  <link rel="stylesheet" href="./sass/style.css">
-
+  <link rel="stylesheet" href="./sass/_style.css">
+  <!-- JS -->
+  <!-- <link rel="stylesheet" href="./js/main.js"> -->
   <!-- Fabicon -->
   <link rel="icon" href="./favicon.ico">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
   <title>30DAYSトライアル</title>
 </head>
@@ -30,13 +31,20 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active pr-4">
-              <a class="nav-link" href="#">デイトラとは <span class="sr-only">(current)</span></a>
+            <li class="nav-item pr-4">
+              <a class="nav-link" href="#">デイトラとは</a>
             </li>
-            <li class="nav-item pr-5">
+            <li class="acMenu nav-item pr-4">
               <a class="nav-link" href="#">コース一覧</a>
+              <nav class="course-menu">
+                <ul>
+                  <li><a href="#">初級</a></li>
+                  <li><a href="#">中級</a></li>
+                  <li><a href="#">上級</a></li>
+                </ul>
+              </nav>
             </li>
-            <li class="nav-item pr-5">
+            <li class="nav-item pr-4">
               <a class="nav-link" href="#">お問い合わせ</a>
             </li>
           </ul>
@@ -77,17 +85,41 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4 px-3 py-1">
-          <img src="./img/web_first.png" alt="image" class="w-100">
+          <img src="./img/web_first.png" alt="image" class="js-modal-open w-100" data-target="modal01">
           <p>HTML / CSS / Bootstrap</p>
         </div>
+        <div id="modal01" class="modal js-modal">
+          <div class="modal__bg js-modal-close"></div>
+          <div class="modal__content">
+            <img src="./img/web_first.png" alt="image" class="w-100">
+          </div>
+          <!--modal__inner-->
+        </div>
+        <!--modal-->
         <div class="col-sm-4 px-3 py-1">
-          <img src="./img/web_second.png" alt="image" class="w-100">
+          <img src="./img/web_second.png" alt="image" class="js-modal-open w-100" data-target="modal02">
           <p>HTML / CSS / JavaScript / jQuery</p>
         </div>
+        <div id="modal02" class="modal js-modal">
+          <div class="modal__bg js-modal-close"></div>
+          <div class="modal__content">
+            <img src="./img/web_second.png" alt="image" class="w-100">
+          </div>
+          <!--modal__inner-->
+        </div>
+        <!--modal-->
         <div class="col-sm-4 px-3 py-1 mb-4">
-          <img src="./img/web_third.png" alt="image" class="w-100">
+          <img src="./img/web_third.png" alt="image" class="js-modal-open w-100" data-target="modal03">
           <p>PHP / WordPress</p>
         </div>
+        <div id="modal03" class="modal js-modal">
+          <div class="modal__bg js-modal-close"></div>
+          <div class="modal__content">
+            <img src="./img/web_third.png" alt="image" class="w-100">
+          </div>
+          <!--modal__inner-->
+        </div>
+        <!--modal-->
       </div>
     </div>
   </section>
@@ -128,10 +160,62 @@
     </div>
   </footer>
 
+  <div class="floating">
+    <a href="#">トップへ</a>
+  </div>
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Accordion -->
+  <script>
+    $(function () {
+      $(".acMenu .nav-link").on("click", function () {
+        $(".course-menu").slideToggle();
+      });
+    });
+  </script>
+
+  <!-- modal -->
+  <script>
+    $(function () {
+      $('.js-modal-open').each(function () {
+        $(this).on('click', function () {
+          var target = $(this).data('target');
+          var modal = document.getElementById(target);
+          $(modal).fadeIn();
+          return false;
+        });
+      });
+      $('.js-modal-close').on('click', function () {
+        $('.js-modal').fadeOut();
+        return false;
+      });
+    });
+  </script>
+
+  <!-- floating button -->
+  <script>
+    jQuery(window).on("scroll", function ($) {
+      if (jQuery(this).scrollTop() > 80) {
+        jQuery('.floating').fadeIn(300);
+      } else {
+        jQuery('.floating').fadeOut(300);
+      }
+    });
+
+    jQuery('.floating').click(function () {
+      jQuery('body,html').animate({
+        scrollTop: 0
+      }, 500);
+      return false;
+    });
+  </script>
+
 </body>
 </html>
